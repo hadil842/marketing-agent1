@@ -1,0 +1,12 @@
+fastapi
+werkzeug
+uvicorn
+pandas
+openpyxl
+sqlalchemy
+pydantic-settings
+psycopg2-binary
+google-genai
+apscheduler
+pyjwt
+python-multipart
