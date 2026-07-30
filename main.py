@@ -26,7 +26,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://agent-sage-seven.vercel.app/",
+    allow_origins=["https://marketing-agent2.vercel.app/",
                    "http://localhost:4200"],
     allow_credentials=True,
     allow_methods=["*"],
