@@ -57,9 +57,9 @@ async def upload_file(file:UploadFile=File(...), status_code=status.HTTP_201_CRE
     content = await file.read()
     df = pd.read_excel(io.BytesIO(content))
     
-    # Normalise les noms de colonnes : enlève les espaces, met en minuscule
+    
     df.columns = df.columns.str.strip().str.lower()
-    print("Colonnes détectées:", df.columns.tolist())  # debug temporaire
+    
     
     email_recherche = str(df.at[0, 'emailclient']).strip()
     client = db.query(models.Client).filter(models.Client.email == email_recherche).first()
