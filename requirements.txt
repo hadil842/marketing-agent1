@@ -5,6 +5,7 @@ pandas
 openpyxl
 sqlalchemy
 pydantic-settings
+psycopg[binary]
 psycopg2-binary
 google-genai
 apscheduler
