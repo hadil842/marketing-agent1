@@ -105,7 +105,7 @@ def cancel_job(emailclient: str, db: Session = Depends(get_db)):
 
     client = db.query(models.Client).filter(models.Client.email == emailclient).first()
     if client:
-        db.query(models.Post).filter(models.Post.idClient == client.id).update({"etat": "annulé"})
+        db.query(models.Post).filter(models.Post.idClient == client.id).update({"etat": "cancelled"})
         db.commit()
 
     return "done"
@@ -117,7 +117,7 @@ def cancel_post(post_id: int, db: Session = Depends(get_db)):
     if not post:
         raise HTTPException(status_code=404, detail=f"Aucun post trouvé avec l'id {post_id}")
     
-    post.etat = "annulé"
+    post.etat = "cancelled"
     db.commit()
     
     return "done"
