@@ -76,7 +76,7 @@ async def upload_file(file:UploadFile=File(...), status_code=status.HTTP_201_CRE
         date = df.at[i, 'date']
         description = df.at[i, 'description']
         
-        new_post = models.Post(description=description, date=date, idClient=idClient)
+        new_post = models.Post(description=description, date=date, idClient=idClient,etat="unplublished")
         
         db.add(new_post)
         db.commit()
